@@ -37,7 +37,7 @@ module Fluent
         def run     
             while @running
                 Docker::Event.stream do |event|
-                    if @events.include?(event.action)
+                    if @events.include?(event.action) || @events.include?(event.type + ' ' + event.action)
                         emit(event)
                     end
                 end
