@@ -1,4 +1,4 @@
-require 'fluent/plugin/input'
+require 'fluent/input'
 
 module Fluent
     class DockerEventStreamInput < Input 
